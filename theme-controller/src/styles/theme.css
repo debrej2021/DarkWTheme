@@ -1,0 +1,84 @@
+/* Smooth transition for theme change */
+body {
+    transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
+  }
+  
+  /* Light Theme */
+  body.light {
+    background-color: #fefae0;
+    color: #283618;
+  }
+  
+  /* Dark Theme */
+  body.dark {
+    background-color: #252422;
+    color: #fffcf2;
+  }
+  
+  /* Background animation effect */
+  @keyframes bgTransition {
+    0% {
+      background-color: #fefae0;
+    }
+    50% {
+      background-color: #ffd166;
+    }
+    100% {
+      background-color: #252422;
+    }
+  }
+  
+  @keyframes bgTransitionReverse {
+    0% {
+      background-color: #252422;
+    }
+    50% {
+      background-color: #3a86ff;
+    }
+    100% {
+      background-color: #fefae0;
+    }
+  }
+  
+  /* Apply animated background transition */
+  body.dark {
+    animation: bgTransition 0.8s ease-in-out;
+  }
+  
+  body.light {
+    animation: bgTransitionReverse 0.8s ease-in-out;
+  }
+  
+  /* Button animation: rotating sun 🌞 / moon 🌙 effect */
+  button {
+    padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    background-color: #ffbe0b;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  /* Button dark mode style */
+  body.dark button {
+    background-color: #3a86ff;
+    color: #fff;
+  }
+  
+  /* Sun / Moon rotation effect */
+  .icon {
+    display: inline-block;
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  body.dark .icon {
+    transform: rotate(360deg);
+  }
+  
